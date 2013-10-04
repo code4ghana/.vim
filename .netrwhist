@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='ftp://kevineze@web389.webfaction.com//~/webapps/'
+let g:netrw_dirhist_2='ftp://kevineze@web389.webfaction//'
+let g:netrw_dirhist_3='/home/kwadwo/workspace/contributing/django-userena/userena'
+let g:netrw_dirhist_4='/home/kwadwo/workspace/scripli/website/scripli/scripli'
+let g:netrw_dirhist_5='/home/kwadwo/workspace/scripli/website/scripli/scripli/static'
