@@ -27,7 +27,6 @@ syntax on
 
 "show line numbers and length
 set number "show line numbers
-set tw=79  " width of document
 set nowrap "don't automatically wrap  on load
 highlight  ColorColumn ctermbg=233
 
@@ -38,6 +37,8 @@ vmap  Q pq
 set history=700
 set undolevels=700
 
+"shift-tab ability
+imap <S-Tab> <C-o><<
 
 "spaces instead of TABS
 set tabstop=4
@@ -52,10 +53,61 @@ set incsearch
 set ignorecase
 set smartcase
 
+"insert newline without entering into insert mode
 "Setup Pathogen plugin manager 
+nmap <C-k> kdd
+nmap <C-j> O<Esc>j
+"
+"*********awesome jsbeautify*******************
+"git clone git://github.com/maksimr/vim-jsbeautify.git  cd ~/.vim/bundle
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 "mkdir -p ~/.vim/autoload ~/.vim/bundled
 "curl -so ~/.vim/autoload/pathogen.vim
 "https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
+"
+"
 call pathogen#infect()
+"
+" ============================================================================
+" " Python IDE Setup
+" "
+" ============================================================================
+"
+"
+"
+"
+"
+"
+"*****************Settings for vim-powerline ************ 
+"git clone git://github.com/Lokaltog/vim-powerline.git  cd ~/.vim/bundle
+set laststatus=2
+"
+"
+"****************Settings for ctrlp**********************
+"git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+"****************Settings for jedi-vim******************
+"git clone git://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+let g:jedi#related_names_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+"**************python folding**********************
+" mkdir -p ~/.vim/ftplugin
+" wget -O ~/.vim/ftplugin/python_editing.vim
+" http://www.vim.org/scripts/download_script.php?src_id=5492
+set nofoldenable
 
 
+"*************Syntastic for on the fly syntax checking*****************
+"git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
+"
+"
+"
