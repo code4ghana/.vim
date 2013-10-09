@@ -103,6 +103,7 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "mkdir -p ~/.vim/ftplugin && curl -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 "set nofoldenable
 set foldmethod=indent
+
 "*************Syntastic for on the fly syntax checking*****************
 "git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
 "
