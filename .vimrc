@@ -5,7 +5,7 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 
 "Easier moving of code around
-vnoremap < <gv 
+vnoremap < <gv
 vnoremap > >gv
 
 "Show whitespace
@@ -95,19 +95,18 @@ set wildignore+=*/coverage/*
 "****************Settings for jedi-vim******************
 "git clone git://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 let g:jedi#related_names_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 "**************python folding**********************
-" mkdir -p ~/.vim/ftplugin
-" wget -O ~/.vim/ftplugin/python_editing.vim
-" http://www.vim.org/scripts/download_script.php?src_id=5492
-set nofoldenable
-
-
+"mkdir -p ~/.vim/ftplugin && curl -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
+"set nofoldenable
+set foldmethod=indent
 "*************Syntastic for on the fly syntax checking*****************
 "git clone https://github.com/scrooloose/syntastic.git ~/.vim/bundle/syntastic
 "
 "
 "
+"***********MatchTagAlways for html tag highlighting******************
+"git clone https://github.com/Valloric/MatchTagAlways.git ~/.vim/bundle/matchtag
