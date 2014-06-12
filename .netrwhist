@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/jeff.kusi/workspace/tango/alief'
+let g:netrw_dirhist_2='/Users/jeff.kusi/workspace/tango/alief/disd'
+let g:netrw_dirhist_3='/Users/jeff.kusi/vagrantdir'
+let g:netrw_dirhist_4='/private/var/data/aol-ad/public/assets/images/advertisers'
+let g:netrw_dirhist_5='/Users/jeff.kusi/Desktop/scripli/app/native/scripli/scripli.xcodeproj'
+let g:netrw_dirhist_6='/Users/jeff.kusi/.oh-my-zsh'
+let g:netrw_dirhist_7='/private/tmp/node_modules'
