@@ -1,5 +1,20 @@
 " Automatic reading of .vimrc
 autocmd! bufwritepost .vimrc source %
+
+"******VUNDLE**********
+set nocompatible              " be iMproved, required
+filetype off                  " required
+"" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+"*******END VUNDLE********
+
 " Better clipboard
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -25,6 +40,15 @@ filetype off
 filetype plugin indent on
 syntax on
 
+"Some Linux distributions set filetype in /etc/vimrc.
+"  " Clear filetype flags before changing runtimepath to force Vim to reload
+"  them.
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+
+"fmt GO code n save
+
 "show line numbers and length
 set number "show line numbers
 set nowrap "don't automatically wrap  on load
@@ -49,14 +73,17 @@ set expandtab
 
 "make serach case insensitive by default
 set hlsearch
-set incsearch
-set ignorecase
 set smartcase
+set ignorecase
+set incsearch
 
 "insert newline without entering into insert mode
 "Setup Pathogen plugin manager 
 nmap <C-k> kdd
 nmap <C-j> O<Esc>j
+
+"swtich buffers with [
+nmap [ bNext
 "
 "*********awesome jsbeautify*******************
 "git clone git://github.com/maksimr/vim-jsbeautify.git  cd ~/.vim/bundle
@@ -93,8 +120,9 @@ set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 "****************Settings for jedi-vim******************
+"pip install jedi
 "git clone git://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
-let g:jedi#related_names_command = "<leader>z"
+let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
@@ -111,3 +139,11 @@ set foldmethod=indent
 "
 "***********MatchTagAlways for html tag highlighting******************
 "git clone https://github.com/Valloric/MatchTagAlways.git ~/.vim/bundle/matchtag
+"
+"***********Remap colon and semicolon*******************************
+:noremap ; :
+:noremap : ;
+
+
+"***********Allow buffer switching without saving*******************************
+set hidden
